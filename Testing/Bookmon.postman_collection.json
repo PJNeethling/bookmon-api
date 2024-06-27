@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "c9d10bd4-bc9f-4a78-8ed3-dc0c00027ac4",
+		"name": "Bookmon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29875784"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"var accessToken = data.accessToken;\r",
+									"pm.environment.set('bookMon_accessToken', accessToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"pj\",\r\n  \"password\": \"P@ssw0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7105/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7105",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bookMon_accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7105/manage/info",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7105",
+							"path": [
+								"manage",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get All Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bookMon_accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7105/api/v1/books",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7105",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bookMon_accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7105/api/v1/books/0c09512b-0caa-455b-b491-b98ba28b703a",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7105",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"0c09512b-0caa-455b-b491-b98ba28b703a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Purchase Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bookMon_accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"books\": [\r\n    \"0c09512b-0caa-455b-b491-b98ba28b703a\",\r\n    \"3c84d5eb-6c17-476e-a980-cd11245b786d\",\r\n    \"6b19e99b-50a9-4330-8bf3-a7080b44b9e6\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7105/api/v1/orders",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7105",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bookMon_accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7105/api/v1/orders/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7105",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bookMon_accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"books\": [\r\n    \"07c4334e-d189-4be2-ac49-0257b58d1154\",\r\n    \"7c875085-f001-45e5-9cdb-a6daa277a11a\",\r\n    \"71cbbba1-231c-4e9d-ba97-d067c2abf899\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7105/api/v1/orders/1595f3f8-7d54-42b1-8b74-d13c5a84ccbc",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7105",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"1595f3f8-7d54-42b1-8b74-d13c5a84ccbc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

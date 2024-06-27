@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookmon.API", "Source\Bookmon.API\Bookmon.API.csproj", "{09B3D9A6-67DA-4C2E-AE61-7F8719DEACD0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookmon.Domain", "Source\Bookmon.Domain\Bookmon.Domain.csproj", "{3DAEC924-39B8-4247-921F-D4481052E1D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookmon.Infrastructure", "Source\Bookmon.Infrastructure\Bookmon.Infrastructure.csproj", "{8BEB6954-7E22-4AE4-A701-796FE40C0E45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5892463B-CB8F-4E99-A4AD-2D553D0F989E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmon.API.Tests", "Source\Tests\Bookmon.API.Tests\Bookmon.API.Tests.csproj", "{FD4F91E4-82FA-42F2-86B9-A45105564D6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmon.Domain.Tests", "Source\Tests\Bookmon.Domain.Tests\Bookmon.Domain.Tests.csproj", "{B6A686E6-C926-4234-993F-E34A7F2AE827}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmon.Infrastructure.Tests", "Source\Tests\Bookmon.Infrastructure.Tests\Bookmon.Infrastructure.Tests.csproj", "{0E0C8CCC-9499-4EDF-AF12-1BD6D3FA8F92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09B3D9A6-67DA-4C2E-AE61-7F8719DEACD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B3D9A6-67DA-4C2E-AE61-7F8719DEACD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B3D9A6-67DA-4C2E-AE61-7F8719DEACD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B3D9A6-67DA-4C2E-AE61-7F8719DEACD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DAEC924-39B8-4247-921F-D4481052E1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DAEC924-39B8-4247-921F-D4481052E1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DAEC924-39B8-4247-921F-D4481052E1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DAEC924-39B8-4247-921F-D4481052E1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEB6954-7E22-4AE4-A701-796FE40C0E45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEB6954-7E22-4AE4-A701-796FE40C0E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEB6954-7E22-4AE4-A701-796FE40C0E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEB6954-7E22-4AE4-A701-796FE40C0E45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4F91E4-82FA-42F2-86B9-A45105564D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4F91E4-82FA-42F2-86B9-A45105564D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4F91E4-82FA-42F2-86B9-A45105564D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4F91E4-82FA-42F2-86B9-A45105564D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A686E6-C926-4234-993F-E34A7F2AE827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A686E6-C926-4234-993F-E34A7F2AE827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A686E6-C926-4234-993F-E34A7F2AE827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A686E6-C926-4234-993F-E34A7F2AE827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E0C8CCC-9499-4EDF-AF12-1BD6D3FA8F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0C8CCC-9499-4EDF-AF12-1BD6D3FA8F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0C8CCC-9499-4EDF-AF12-1BD6D3FA8F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0C8CCC-9499-4EDF-AF12-1BD6D3FA8F92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD4F91E4-82FA-42F2-86B9-A45105564D6A} = {5892463B-CB8F-4E99-A4AD-2D553D0F989E}
+		{B6A686E6-C926-4234-993F-E34A7F2AE827} = {5892463B-CB8F-4E99-A4AD-2D553D0F989E}
+		{0E0C8CCC-9499-4EDF-AF12-1BD6D3FA8F92} = {5892463B-CB8F-4E99-A4AD-2D553D0F989E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82F7FABA-DA15-472E-9946-978051796620}
+	EndGlobalSection
+EndGlobal

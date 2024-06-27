@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookmon-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookmon-service
+  template:
+    metadata:
+      labels:
+        app: bookmon-service
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: bookmon-service
+        image: pjneethlingza/bookmon-api:latest
+        ports:
+        - containerPort: 3002
+        resources:
+          requests:
+            cpu: 1m
+            memory: 1Mi
+          limits:
+            cpu: 1m
+            memory: 7Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bookmon-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3002
+    targetPort: 3002
+  selector:
+    app: bookmon-service

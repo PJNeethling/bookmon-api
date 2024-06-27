@@ -1,0 +1,19 @@
+@Bookmon.API_HostAddress = https://localhost:7105
+
+POST {{Bookmon.API_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "email": "pjneethling",
+  "password": "P@ssw0rd"
+}
+
+###
+POST {{Bookmon.API_HostAddress}}/register
+Content-Type: application/json
+
+{
+  "username": "pjneethling",
+  "password": "SuperSecret1!",
+  "email": "pj@example.com"
+}
